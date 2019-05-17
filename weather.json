@@ -1,0 +1,36 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue May 14 11:14:18 2019
+
+@author: Vijay
+"""
+
+"""
+Code Challenge
+  Name: 
+    JSON Parser
+  Filename: 
+    json.py
+  Problem Statement:
+    Get me the other details about the city
+        Latitude and Longitude
+        Weather Condition
+        Wind Speed
+        Sunset Rise and Set timing
+        """
+import requests
+
+url1 = "http://api.openweathermap.org/data/2.5/weather"
+url2 = "?q=Jaipur"
+url3 = "&appid=e9185b28e9969fb7a300801eb026de9c" 
+url = url1 + url2 + url3
+print (url) 
+response = requests.get(url)
+json_data=response.json()
+print(json_data["coord"])
+print(json_data['weather'])
+print(json_data['wind'])
+print(json_data['sys'])
+
+ 
+ 
